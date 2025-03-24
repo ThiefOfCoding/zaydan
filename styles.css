@@ -1,0 +1,341 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(https://xatimg.com/image/jhd5KMtKXcvy.gif);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Clock Styling */
+.clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 60px;
+  color: #00FFFF;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+  margin-bottom: 20px;
+  animation: glow 1.5s ease-in-out infinite, moveClock 2s infinite;
+  position: relative;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 40px rgba(0, 255, 255, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+}
+
+@keyframes moveClock {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Password Entry */
+.password-container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px 5px rgba(0, 255, 255, 0.7);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out, floatAnimation 3s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+  border: 2px solid #00FFFF;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.password-container h1 {
+  margin-bottom: 20px;
+  color: #00FFFF;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+}
+
+/* Estilo do campo de senha */
+.password-container input {
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #00FFFF;
+  width: 100%;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00FFFF;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.password-container input:focus {
+  border-color: #FF00FF;
+  background-color: #111;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+/* Botão de desbloqueio */
+.password-container button {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #00FFFF;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.password-container button:hover {
+  background-color: #FF00FF;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.9);
+}
+
+.password-container button:active {
+  transform: translateY(1px);
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: #FF00FF;
+  margin-top: 10px;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.7);
+}
+
+/* Image Gallery */
+.image-gallery {
+  width: 100%;
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+  padding: 20px;
+  text-align: center;
+  animation: fadeInGallery 1s ease-in-out;
+  backdrop-filter: blur(8px);
+  border: 2px solid #00FFFF;
+}
+
+@keyframes fadeInGallery {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.gallery-images img {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border: 2px solid transparent;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 1;
+  border-color: #00FFFF;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+/* Video Tooltip */
+.video-tooltip {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.video-tooltip button {
+  padding: 15px 25px;
+  background-color: #00FFFF;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.video-tooltip button:hover {
+  background-color: #FF00FF;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.9);
+}
+
+/* Video Popup */
+.video-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 80%;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: #FF00FF;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
+}
+
+.close-btn:hover {
+  background-color: #FF00FF;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Avatar Button */
+.avatar-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10;
+  animation: floatAvatar 2s ease-in-out infinite;
+}
+
+@keyframes floatAvatar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.avatar-arrow {
+  font-size: 35px;
+  color: #00FFFF;
+  transform: rotate(180deg);
+}
+
+.avatar-popup {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  animation: fadeInAvatar 0.5s ease-in-out;
+}
+
+@keyframes fadeInAvatar {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.avatar-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.avatar-name {
+  color: #00FFFF;
+  margin-top: 5px;
+  font-size: 16px;
+}
