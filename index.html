@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Protected Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Displaying Clock -->
+  <div id="clock" class="clock"></div>
+
+  <!-- Password Entry Area -->
+  <div class="password-container" id="password-container">
+    <h1>Locked!</h1>
+    <input type="password" id="password-input" placeholder="Enter Your Password now...">
+    <button id="unlock-btn">Submit</button>
+    <p id="error-message" class="error-message"></p>
+  </div>
+
+  <!-- Image Gallery (Hidden initially) -->
+  <div class="image-gallery" id="image-gallery" style="display: none;">
+    <h2></h2>
+    <div class="gallery-images">
+      <img src="https://xatimg.com/image/apzzAi0e6hXK.jpg" alt="Image 1">
+      <img src="https://xatimg.com/image/LvbJHceoXaqm.jpg" alt="Image 2">
+      <img src="https://xatimg.com/image/RxXPIBSkJCF4.jpg" alt="Image 3">
+      <img src="https://xatimg.com/image/6rOibxonzM48.jpg" alt="Image 4">
+    </div>
+  </div>
+
+  <!-- Video Tooltip -->
+  <div class="video-tooltip" id="video-tooltip">
+    <button id="video-btn">Watch YouTube Video</button>
+  </div>
+
+  <!-- Video Popup -->
+  <div class="video-popup" id="video-popup">
+    <div class="popup-content">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <iframe id="youtube-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Avatar Button in Bottom Right -->
+  <div class="avatar-button" id="avatar-button">
+    <div class="avatar-arrow">&#8593;</div>
+    <div class="avatar-popup" id="avatar-popup">
+      <img src="https://xatimg.com/image/JGRkFwH2barv.png" alt="Marsh Avatar" class="avatar-image">
+      <p class="avatar-name">Marsh</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
