@@ -16,7 +16,7 @@ const unlockButton = document.getElementById('unlock-btn');
 const errorMessage = document.getElementById('error-message');
 const imageGallery = document.getElementById('image-gallery');
 
-const correctPassword = "graphics"; // Set your password here
+const correctPassword = "25019700"; // Set your password here
 
 unlockButton.addEventListener('click', function () {
   if (passwordInput.value === correctPassword) {
